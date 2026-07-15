@@ -1,0 +1,162 @@
+/* AML 洗钱风险评估系统 — 金融风格全局主题 */
+:root {
+  --bg-primary: #f0f2f5;
+  --bg-card: #ffffff;
+  --header-bg-start: #0a0e27;
+  --header-bg-end: #1a1f3a;
+  --text-primary: #1a1f3a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --accent-blue: #4a90d9;
+  --accent-light: #7eb8da;
+  --risk-low: #52c41a;
+  --risk-mid: #faad14;
+  --risk-high: #e74c3c;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --card-radius: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 顶部导航栏 — 固定 */
+.ant-layout-header.bcm-header {
+  background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ant-layout-header.bcm-header .brand {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ant-layout-header.bcm-header .header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ant-layout-header.bcm-header .header-right span {
+  color: #7eb8da;
+  font-size: 0.85rem;
+}
+
+/* 侧边栏 — 固定 */
+.ant-layout-sider.bcm-sider {
+  background: #fff;
+  border-right: 1px solid #e8e8e8;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+.ant-menu-inline {
+  border-inline-end: none !important;
+}
+
+/* 评分卡片行 */
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.score-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.score-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.score-card .label {
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.score-card .value {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.score-card .bar {
+  height: 4px;
+  border-radius: 2px;
+  background: #f0f0f0;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.score-card .bar .fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* 图表面板 */
+.chart-panel {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.chart-panel:last-child {
+  margin-bottom: 0;
+}
+
+.chart-panel h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1f3a;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1f3a;
+  margin-bottom: 20px;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #bbb;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f0f0f0; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }

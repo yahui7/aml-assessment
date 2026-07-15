@@ -1,0 +1,11 @@
+{
+  "id": "tpl_20260710124456",
+  "name": "test123",
+  "sections": [
+    {
+      "title": "chapter 1",
+      "content": "hello {{company}} {{风险等级}}"
+    }
+  ],
+  "preset": false
+}
