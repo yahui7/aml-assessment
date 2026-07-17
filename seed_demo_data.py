@@ -41,8 +41,8 @@ def seed():
         pid = f"PRD{1000+i:04d}"
         products.append({"id": pid, "name": f"{issuer}-{ptype}", "type": pcat, "risk": risk, "issuer": issuer})
         cur.execute("""
-            INSERT INTO product (product_id, product_name, product_type, risk_level, issuer, status, launch_date, maturity_date, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, 'active', ?, ?, datetime('now'), datetime('now'))
+            INSERT INTO product (product_id, product_name, product_type, risk_level, issuer, status, launch_date, maturity_date, created_at)
+            VALUES (?, ?, ?, ?, ?, 'active', ?, ?, datetime('now'))
         """, (pid, f"{issuer}-{ptype}", pcat, risk, issuer, launch.strftime("%Y-%m-%d"), maturity.strftime("%Y-%m-%d")))
     print(f"  {len(products)} products inserted")
 
